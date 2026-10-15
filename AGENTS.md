@@ -90,6 +90,7 @@ Use `themes/sansoul/_examples/data/section/example.yml` as the parameter catalog
 - `data/config.yml`: behavior and integrations.
 - `data/langs.yml`: languages and per-language overrides.
 - `data/styles.yml`: design tokens and global UI options.
+- `data/resources.yml`: resources used indirectly by CSS, JavaScript, or dynamic data. SVG uses from rendered templates are grouped automatically; do not add manual sprite-group configuration.
 - `data/types/*.yml`: collections and templates.
 - `data/section/*.yml`: reusable section definitions.
 - `data/defaults.yml`: language/type/path defaults; keep selectors narrow.
@@ -110,18 +111,11 @@ Fields are required by default. Generate `required: false` only when empty value
 
 ## Theme update workflow
 
-When asked to update the submodule:
+Use `sh do update` from the project root. It checks both Git trees, verifies the configured branch can fast-forward, validates known migration conflicts, and confirms root README/AGENTS are managed before changing files. It also accepts a clean fast-forward already checked out in the submodule when that is the only root Git status entry, for bootstrapping projects pinned to an older release. A failure during preflight means no project files or submodule checkout were changed. `sh do update --check` fetches remote Git metadata and prints the same plan without updating the checkout.
 
-1. read DNA, record the root package version and old submodule commit, and inspect both working trees;
-2. if a pre-5.0 project still needs the private legacy updater, run `sh do update` before replacing its old theme;
-3. update the configured SanSoul submodule branch within the requested scope;
-4. read `themes/sansoul/MIGRATIONS.md`, run `sh do migrations`, and apply every pending action in order;
-5. run `sh do root-docs` when the migration requires it; `--force` replaces unmanaged root README/AGENTS wholesale and never transfers their content into DNA;
-6. run the required project and theme validations;
-7. only then run `sh do migrations mark --yes`, which synchronizes root `package.json` and, when present, `package-lock.json`;
-8. report the changed parent gitlink without staging or committing it.
+After preflight, the command advances SanSoul, runs registered migration scripts, synchronizes both root README and AGENTS from the theme templates, installs dependencies when a migration requires it, and runs the full build. If migration-specific manual checks remain, it displays them and requires explicit confirmation before updating the root package compatibility version. Without an interactive terminal it leaves that version unchanged; after completing the checks, run `sh do migrations mark --yes`.
 
-Never assume a successful build proves migration completeness, and never mark compatibility automatically during build or submodule update.
+The updater refuses dirty worktrees, diverged submodule history, unmanaged root documents, unsupported migration versions, and known content rename collisions. It never uses `--force`, stages, commits, pushes, or deploys. Projects pinned to a theme release without this command need a one-time bootstrap with `git submodule update --remote themes/sansoul`, then can run `sh do update --check` and `sh do update`. Projects below the 5.0.0 baseline require a verified legacy migration and are not advanced by this updater.
 
 ## Validation matrix
 
@@ -137,7 +131,7 @@ Never assume a successful build proves migration completeness, and never mark co
 | Deployment configuration | Build with pinned Hugo Extended and Node versions; do not deploy unless asked. |
 | Theme code | Follow `themes/sansoul/AGENTS.md` and test the copyable example plus the current consumer project. |
 
-Remote-font warnings can be environmental. Template errors, invalid YAML, missing packages, failed images, or a false-success process exit are build failures.
+Remote-font warnings can be environmental. In particular, a local DNS or network failure for `fonts.googleapis.com` may prevent the Material Symbols subset request; SanSoul then uses its bundled full font as a local fallback. This explains the warning but does not validate the subset configuration or the production font payload. Run PageSpeed Insights only when the Google Fonts CSS and requested WOFF2 subset resolve successfully, and disregard measurements taken with the fallback. Template errors, invalid YAML, missing packages, failed images, or a false-success process exit are build failures.
 
 ## Documentation and DNA
 

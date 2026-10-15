@@ -1,6 +1,6 @@
 {
   "name": "sansoul.es",
-  "version": "7.0.0",
+  "version": "7.5.1",
   "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
