@@ -1,2 +1,2 @@
 #!/bin/sh
-exec sh ./themes/sansoul/do "$@"
+exec sh ./core/do "$@"
