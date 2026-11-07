@@ -26,7 +26,7 @@ boxes:
       label: 111 222 333
       btn: cta
     - type: mail
-      label: info@sansoul.es
+      label: sansoul@seacomoseo.com
       full: true
     - type: address
       label: Ronda de Levante, 1, 30008 Murcia

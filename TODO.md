@@ -10,7 +10,7 @@ Below I describe the typical steps to follow once the repository has been copied
 
 - If new project (not fork):
   - Copy [var_domain project files](https://github.com/var_owner/var_domain)
-  - `git submodule add https://github.com/seacomoseo/sansoul.git themes/sansoul`
+  - `git submodule add https://github.com/seacomoseo/sansoul.git core`
 - Else if fork:
   - Download submódule theme files: `git submodule update --init --recursive`
 - Now you can see the run project in the browser with the `do server` comand
