@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "entries": {
+    "/u/base/video-demo.mp4": {
+      "fingerprint": "9376211cfcde7f690055d48d47df091ff683deb6250a0c097bb240cfc861d9df",
+      "metadata": {
+        "width": 180,
+        "height": 320,
+        "ratio": 0.5625,
+        "duration": "PT1S",
+        "name": "Video demo",
+        "dateCreated": "2024-01-01T00:00:00.000Z",
+        "thumbnailUrl": "/u/video-posters/9376211cfcde7f690055d48d47df091ff683deb6250a0c097bb240cfc861d9df-first-frame-v1.jpg"
+      }
+    },
+    "youtube:70LEUWeNQXg": {
+      "fingerprint": "youtube:70LEUWeNQXg",
+      "metadata": {
+        "name": "La IA está rompiendo los límites del software",
+        "thumbnailUrl": "https://i.ytimg.com/vi/70LEUWeNQXg/hqdefault.jpg",
+        "provider": "YouTube",
+        "author": "midudev"
+      }
+    },
+    "youtube:xAylvGvkaZg": {
+      "fingerprint": "youtube:xAylvGvkaZg",
+      "metadata": {
+        "name": "Presentación Afree Original",
+        "thumbnailUrl": "https://i.ytimg.com/vi/xAylvGvkaZg/hqdefault.jpg",
+        "provider": "YouTube",
+        "author": "Afree Recuerda Quien Eres"
+      }
+    }
+  }
+}

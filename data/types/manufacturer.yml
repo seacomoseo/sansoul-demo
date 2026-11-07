@@ -1,0 +1,6 @@
+title: Fabricantes
+base: org
+weight: 8
+tax_of:
+- name: product
+  schema: manufacturer

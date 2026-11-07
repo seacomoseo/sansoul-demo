@@ -1,0 +1,20 @@
+name: Recorrido
+boxes:
+- title: Un recorrido sencillo
+  sub: De la ficha a la composición
+  icon: route
+  step:
+    line: true
+  steps:
+  - title: Explora
+    sub: Abre las rutas del menú
+    icon: search
+    md: Revisa índices, fichas individuales y páginas de referencia.
+  - title: Adapta
+    sub: Copia los datos que necesitas
+    icon: content_copy
+    md: Ajusta las colecciones y secciones al contenido de tu proyecto.
+  - title: Compón
+    sub: Combina los bloques
+    icon: widgets
+    md: Prueba cajas, listas, formularios y otros componentes desde la página de componentes.

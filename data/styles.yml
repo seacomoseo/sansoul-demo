@@ -76,8 +76,8 @@ btns:
     bold: false
     caps: false
 inputs:
-  fill: false
-  labels: in
+  fill: true
+  labels: both
 shadow:
   left: 0.15
   top: 0.15

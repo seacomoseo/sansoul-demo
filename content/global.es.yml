@@ -1,8 +1,37 @@
 menu:
   img: /u/base/logo.svg
   title: SanSoul
-  sub: Tema de Hugo
+  sub: Sitio de referencia
+  items:
+  - url: /
+    il: home
+    label: Inicio
+    ir: close
+  - url: /blog/
+    il: article
+    label: Blog
+  - url: /servicios/
+    il: design_services
+    label: Servicios
+  - url: /productos/
+    il: storefront
+    label: Productos
+  - url: /eventos/
+    il: event
+    label: Eventos
+  - url: /componentes/
+    il: construction
+    label: Componentes
+  - url: /videos/
+    il: movie
+    label: Vídeos
+  - url: /vista-previa/
+    il: preview
+    label: Vista previa
+  - url: /divisores/
+    il: cut
+    label: Divisores
+callnows: []
 footer:
-  div: curve-side
-  space: 2
-  dots: []
+  color: dark
+  div: squares

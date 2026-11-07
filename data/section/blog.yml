@@ -1,0 +1,10 @@
+name: Blog
+boxes:
+- title: Notas de la referencia
+  sub: Artículos breves con fechas estables
+  icon: article
+  list:
+    type: blog
+    max: 3
+  box:
+    cols: 3

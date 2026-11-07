@@ -1,47 +1,45 @@
 ---
 slug: /
 title: Inicio
+sum: Sitio ficticio para copiar, explorar y probar las capacidades de SanSoul.
 img: /u/base/poster.png
-sum: SanSoul es el alma del tema Hugo de lorensansol con el que generar sitios web estáticos, puedes copiarlo y usarlo como quieras
+weight: 1
 seo:
-  title: null
-  desc: llll➤ SanSoul es un tema de Hugo con alma para webs de servicios ✅ por lorensansol ☎️ 123 456 789.
+  title: SanSoul | Sitio de referencia
+  desc: Demo copiable de SanSoul con páginas, colecciones y componentes.
+  noindex: false
 tpl:
   sections:
   - file: _hero
   - file: nosotros
   - file: servicios
-  - file: proceso
-  - file: fotos
-  - file: noticias
+  - file: recorrido
+  - file: galeria
+  - file: blog
   - file: faq
   - file: resenas
   - file: contacto
-  - file: mapa
 base: org
 org:
   types:
   - LocalBusiness
   - Organization
   names:
-  - Tema SanSoul de Hugo EJEMPLO
+  - SanSoul — sitio de referencia
   - SanSoul
-  desc: null
-  legal: null
-  nif: null
-  mail: null
-  logo: /u/base/poster.svg
+  desc: Demo técnica sin organización comercial asociada.
+  logo: /u/base/logo.svg
   imgs:
   - /u/base/poster.png
   as:
-  - https://www.facebook.com/QuantumFracture
-  - https://www.instagram.com/quantumfracture/
+  - https://www.facebook.com/example
+  - https://www.instagram.com/example/
   - https://g.page/r/CQI3T3wmeAB6EBM
   phones:
   - 123456789
   - +34 987 654 321
   address:
-    name: Sea Como SEO
+    name: Example
     street: Ronda de Levante, 1
     pc: '30008'
     locality: Murcia
@@ -74,15 +72,14 @@ org:
       close: 13:00
   prices: €€
   services:
-  - title: Diseño Web
-    desc: null
-    price: 800
-    area: Internacional
-  - title: SEO
-    desc: null
-    price: 250
-    area: Internacional
-  - title: SEM
-    desc: Descripción de ejemplo
-    area: Internacional
+  - title: Auditoría de contenido de muestra
+    desc: Ficha ficticia para probar la colección de servicios
+    price: 120
+    area: Entorno local
+    url: /servicios/auditoria-de-contenido/
+  - title: Asesoría de composición de muestra
+    desc: Segunda ficha ficticia para probar listados y relaciones.
+    price: 80
+    area: Entorno local
+    url: /servicios/asesoria-de-composicion/
 ---

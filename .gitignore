@@ -6,3 +6,6 @@ resources
 package-lock.json
 .vscode
 jsconfig.json
+.sansoul-dev.lock
+.pnpm-store
+.env.local

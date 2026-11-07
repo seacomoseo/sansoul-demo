@@ -1,0 +1,5 @@
+title: Servicios
+base: service
+prefix: servicios
+weight: 2
+rel: true

@@ -1,0 +1,17 @@
+title: Eventos
+base: event
+prefix: eventos/:year/:month/:day
+weight: 4
+rel: true
+tpl:
+  list:
+    cols: 3
+    card: true
+    rate: 3/4
+    align: left
+    shade: false
+    tags:
+    - type: date
+    - type: param
+      param: address.name
+      icon: location_on

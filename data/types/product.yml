@@ -1,0 +1,5 @@
+title: Productos
+base: product
+prefix: productos
+weight: 3
+rel: true

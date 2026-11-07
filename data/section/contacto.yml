@@ -1,20 +1,21 @@
 name: Contacto
-menu_btn: cta
+menu_btn: hide
 boxes:
-- title: Contacto
-  sub: ¿En qué podemos ayudarte?
+- title: Contacto de muestra
+  sub: No envía mensajes; usa una dirección reservada
   icon: send
+  md: El formulario sirve para revisar su presentación y validación. No lo uses para enviar información personal.
   box:
     cols: 2
   boxes:
   - dots:
-    - url: https://www.facebook.com/QuantumFracture
-    - url: https://www.instagram.com/quantumfracture/
-    - url: https://www.youtube.com/channel/UCbdSYaPD-lr1kW27UJuk8Pw
-    - url: https://twitter.com/QuantumFracture
-    - url: https://www.linkedin.com/company/quantum-fracture
-    - url: https://github.com/lorensansol
-    - url: https://mastersoflol.com/collections/quantumfracture?YTC
+    - url: https://www.facebook.com/example
+    - url: https://www.instagram.com/example/
+    - url: https://www.youtube.com/@example
+    - url: https://twitter.com/example
+    - url: https://www.linkedin.com/company/example
+    - url: https://github.com/example
+    - url: https://example.com/example
     when:
     - days: Lunes a Viernes
       hours: 9:00 - 12:30 y 14:30 - 20:00
@@ -30,23 +31,24 @@ boxes:
       full: true
     - type: address
       label: Ronda de Levante, 1, 30008 Murcia
-      anchor: Sea Como SEO, Ronda de Levante, 1, 30008 Murcia
+      anchor: Example, Ronda de Levante, 1, 30008 Murcia
     form:
+      action: about:blank
       mail: sansoul@seacomoseo.com
     inputs:
     - type: text
-      name: Nombre
+      name: Nombre de prueba
       icon: person
       req: true
     - type: phone
-      name: Teléfono
+      name: Teléfono de prueba
       icon: phone
     - type: mail
-      name: Email
+      name: Email de prueba
       icon: mail
       req: true
     - type: area
-      name: Mensaje
+      name: Mensaje de prueba
       icon: chat_bubble
       req: true
   - geos:

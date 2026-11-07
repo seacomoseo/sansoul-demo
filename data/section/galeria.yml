@@ -1,0 +1,13 @@
+name: Galería
+boxes:
+- title: Galería local
+  sub: Imágenes del proyecto reutilizadas como fixtures
+  icon: photo_library
+  gallery:
+    cols: 3
+    type: rows
+    btn: hide
+  imgs:
+  - /u/base/poster.png
+  - /u/base/icon.png
+  - /u/base/poster.svg

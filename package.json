@@ -1,6 +1,6 @@
 {
   "name": "sansoul.es",
-  "version": "7.5.1",
+  "version": "13.4.0",
   "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -8,12 +8,15 @@
     "sass-embedded": "^1.100.0",
     "sharp": "^0.35.3",
     "sharp-ico": "^0.1.5",
-    "simple-icons": "^15.12.0"
+    "simple-icons": "^15.12.0",
+    "yaml": "2.9.1"
   },
   "scripts": {
     "test": "sh do check",
-    "build": "sh do hugo",
-    "server": "npx http-server public"
+    "build": "sh do build",
+    "server": "npx http-server public",
+    "dev": "sh do dev",
+    "live": "sh do live"
   },
   "engines": {
     "node": "^22.22.0 || >=24.11.0"
@@ -39,6 +42,12 @@
       "SimpleLightbox",
       "MathJax",
       "L"
+    ]
+  },
+  "packageManager": "pnpm@10.28.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher@2.6.0"
     ]
   }
 }
