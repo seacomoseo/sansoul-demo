@@ -1,64 +1,11 @@
 name: Servicios
 boxes:
-- title: Servicios
-  sub: ¿Qué procesos seguimos?
-  icon: rocket_launch
+- title: Servicios de ejemplo
+  sub: Una colección con páginas propias y tarjetas enlazadas
+  icon: design_services
+  list:
+    type: service
+    max: 3
   box:
-    cols: 0
-    cols_vs: 2
-    caps: true
-    line: true
-    icon_pos: sub
-    border: cta
-    inset: true
-    color: white
+    cols: 3
     slider: true
-  boxes:
-  - boxes:
-    - url: '#ejemplo'
-      pin: svg:base/logo
-    - sub: Más Agámoslo!
-    - icon: pets
-    - title: Ola k ase
-    - md: |
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-    - img: /u/base/poster.png
-      inset: true
-      border: cta
-      ratio: 2/1
-  - title: Ola k ase
-    sub: Agámoslo!
-    line: true
-    md: |
-      Lorem ipsum dolor sit amet, [consectetur](/u/base/poster.png "[nofollow]") adipiscing elit, sed do eiusmod tempor.
-  - title: Ola k ase
-    sub: Agámoslo!
-    md: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-    url: '#ejemplo'
-    btn: hide
-    lock: true
-    fit_vs: 2
-    tag: col
-    tags:
-    - type: custom
-      icon: star
-      label: Ejemplaco
-    - type: custom
-      icon: list
-      label: Yeah
-    scroll: box
-  - icon: star
-    icon_size: 3
-    icon_pos: top
-    title: Ola k ase
-    sub: Agámoslo!
-    md: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-modals:
-- title: Ejemplo
-  sub: ¿Qué quieres saber?
-  img: /u/base/poster.png
-  icon: info
-  md: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

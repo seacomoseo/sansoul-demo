@@ -1,7 +1,7 @@
 name: Reseñas
 boxes:
-- title: Reseñas
-  sub: ¿Qué dicen de nosotros?
+- title: Tarjetas de reseña
+  sub: Contenido inventado para mostrar el componente
   icon: reviews
 - review:
     cols: 3
@@ -38,9 +38,15 @@ boxes:
       Consectetur, adipisci velit, sed quia non numquam eius modi tempora.
 
       Incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-- md: |
-    ¡Hay más aquí! ¡Añade la tuya!
-    {.sub}
-
-    [[::star:: Google]](https://g.page/r/CQI3T3wmeAB6EBM/review "[nofollow]")
-    [[::star:: Facebook]](https://www.facebook.com/QuantumFracture/reviews/ "[nofollow]")
+- sub: ¡Hay más aquí! ¡Añade la tuya!
+  mt: 2
+  link:
+    mt: 1
+    align_x: center
+    il: star
+    lock: true
+  links:
+  - label: Google
+    url: https://g.page/r/CQI3T3wmeAB6EBM/review
+  - label: Facebook
+    url: https://www.facebook.com/example/reviews/

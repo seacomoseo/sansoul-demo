@@ -2,14 +2,18 @@
 
 ## Resumen
 
-Este repositorio es la copia de referencia para crear nuevos sitios que utilizan SanSoul como tema Hugo. No representa un cliente concreto: sus archivos raíz, configuración y contenido inicial deben permanecer suficientemente genéricos para poder copiarlos y adaptarlos.
+Este repositorio es la referencia copiable para crear sitios que usan SanSoul y el entorno de demo para desarrollar y probar el tema. No representa a un cliente ni a un negocio. El contenido de ejemplo se puede reemplazar al iniciar un proyecto nuevo.
 
-El sitio de referencia se publica en <https://sansoul.pages.dev/>. Los valores `var_*`, como `var_domain`, son marcadores deliberados que deben sustituirse al crear un proyecto real.
+El sitio público de referencia está en <https://sansoul.pages.dev/>. Los valores `var_*`, como `var_domain`, son marcadores deliberados que deben sustituirse en un proyecto real.
 
-## Particularidades de esta referencia
+## Particularidades
 
-- `content/page/divisores.es.md` genera la galería visual de separadores y no debe eliminarse al limpiar ejemplos.
+- `content/page/divisores.es.md` es la galería visual de separadores; consérvala al limpiar ejemplos.
+- Los ejemplos de contenido, precios, reseñas, servicios, productos y eventos son ficticios. La nota de [contenido de referencia](contenido-de-referencia.md) describe su cobertura y límites.
+- Los formularios usan `about:blank` y `info@example.com`; no se conectan a un proveedor de envío. La demo no configura GA4.
+- `/videos/` usa un patrón sintético local y `/vista-previa/` y `/preview-estructural/` sirven para probar el editor visual experimental; su alcance está en la nota de contenido de referencia.
 
-## Documentos disponibles
+## Documentación
 
-Por ahora no hay documentos adicionales: este índice contiene todo el ADN específico de la referencia.
+- [Manual para proyectos SanSoul](../core/README-ROOT.md)
+- [Ejemplos y parámetros del tema](../core/_examples/README.md)

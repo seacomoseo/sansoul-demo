@@ -1,4 +1,7 @@
+# Configuración segura para el sitio de referencia. Sustituye estos valores
+# al adaptar el proyecto a una organización real.
 mail: sansoul@seacomoseo.com
 ga4: G-NBZD18K812
 cms_logo: /u/base/logo.svg
+cookies_legal: false
 show: true

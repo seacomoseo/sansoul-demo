@@ -1,0 +1,112 @@
+name: Muestrario de componentes
+title: Componentes disponibles
+id: componentes-demo
+boxes:
+- title: Cajas y acciones
+  sub: Texto, imagen, botones y fondos
+  icon: widgets
+  box:
+    cols: 2
+    slider: true
+    pips: dot
+  boxes:
+  - title: Una caja con imagen
+    sub: Recursos locales
+    img: /u/base/poster.png
+    alt: Imagen local de muestra
+    ratio: 16/9
+    md: Las cajas combinan texto, medios y enlaces internos.
+    url: /servicios/auditoria-de-contenido/
+    label: Ver ficha
+    btn: main
+  - title: Abrir un modal
+    icon: open_in_new
+    md: Los modales permiten añadir contenido complementario.
+    url: '#detalle-demo'
+    label: Ver detalle
+    btn: alt
+- title: Pasos, galería y preguntas
+  sub: Bloques que se pueden combinar en una misma sección
+  step:
+    line: true
+  steps:
+  - title: Primer paso
+    sub: Estructura
+    icon: looks_one
+    md: Un bloque de pasos presenta una secuencia breve.
+  - title: Segundo paso
+    sub: Contenido
+    icon: looks_two
+    md: Cada paso admite título, icono, subtítulo y Markdown.
+  gallery:
+    cols: 3
+    type: rows
+    btn: hide
+  imgs:
+  - /u/base/poster.png
+  - /u/base/icon.png
+  - /u/base/poster.svg
+  faq:
+    open: true
+  faqs:
+  - title: ¿Se pueden combinar varios bloques?
+    md: Sí. La composición de esta sección reúne pasos, galería y preguntas frecuentes.
+  - title: ¿Hace falta contenido remoto?
+    md: No. Las imágenes usan recursos incluidos en el proyecto.
+- title: Reseñas de muestra
+  sub: Datos ficticios para visualizar tarjetas y slider
+  review:
+    cols: 2
+    slider: true
+    time: 6
+  reviews:
+  - title: Visitante de prueba
+    sub: Opinión ficticia
+    img: /u/base/icon.png
+    rating: 4
+    md: Una tarjeta de reseña admite imagen, valoración, texto y datos breves.
+  - title: Otra persona de prueba
+    sub: Opinión ficticia
+    img: /u/base/icon.svg
+    rating: 5
+    md: Este contenido no representa una reseña real.
+- title: Formulario sin envío
+  sub: Solo para revisar el componente en local
+  form:
+    id: formulario-demo
+    action: about:blank
+    mail: info@example.com
+    label: Enviar prueba
+    consent: Acepto el uso ficticio de estos datos para la demostración.
+  inputs:
+  - type: text
+    name: Nombre de prueba
+    req: true
+  - type: mail
+    name: Email de prueba
+    req: true
+  - type: select
+    name: Tema
+    items:
+    - label: Componentes
+      key: componentes
+    - label: Colecciones
+      key: colecciones
+  - type: area
+    name: Mensaje de prueba
+    req: true
+- title: Mapa de muestra
+  sub: Punto neutro; no representa una dirección
+  geo:
+    zoom: 2
+    tile: streets
+  geos:
+  - type: point
+    label: Punto de demostración
+    geo: '{"type":"Point","coordinates":[0,0]}'
+modals:
+- id: detalle-demo
+  title: Detalle complementario
+  sub: Contenido dentro de un modal
+  icon: info
+  md: Este modal demuestra cómo añadir una capa de detalle sin sacar al visitante de la página.

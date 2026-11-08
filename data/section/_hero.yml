@@ -1,18 +1,15 @@
 name: Hero
 color: main-dark
 bi: /u/base/poster.png
+alpha: 0.9
 scroll: soft
 full: true
 boxes:
-- img: /u/base/logo.svg
-  fit: 0.125
-  fit_vs: 0.5
-- hanchor: SanSoul Hugo Theme HANCHOR
-  title: SanSoul Hugo Theme
-  hs: 0.2
-  caps: false
-  sub: SanSoul es un tema de Hugo con alma para webs de servicios por lorensansol
+- title: SanSoul
+  hanchor: Un sitio de muestra para explorar SanSoul
+  sub: Referencia copiable y banco de pruebas para el tema
   md: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Explora páginas, colecciones y componentes con contenido ficticio, fechas históricas y recursos locales.
 
-    [[::add:: Más]](#nosotros)
+    [[::construction:: Ver componentes]](/componentes/ "{cta}")
+    [[::article:: Leer el blog]](/blog/)

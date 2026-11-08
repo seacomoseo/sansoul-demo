@@ -1,16 +1,13 @@
-name: FAQ
+name: Preguntas frecuentes
 size: md
 boxes:
-- title: FAQ
-  sub: Preguntas Frecuentes
+- title: Preguntas frecuentes
+  sub: Sobre el contenido de muestra
   icon: help_outline
   faqs:
-  - title: ¿Una pregunta de ejemplo?
-    md: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - title: ¿Otra pregunta de ejemplo?
-    md: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - title: ¿Otra pregunta más de ejemplo?
-    md: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - title: ¿Puedo copiar esta estructura a otro proyecto?
+    md: Sí. El contenido raíz está pensado para servir como referencia inicial; sustituye los datos de ejemplo por información propia.
+  - title: ¿Los precios y reseñas son reales?
+    md: No. Son datos ficticios para visualizar componentes y probar las plantillas.
+  - title: ¿El formulario envía mensajes?
+    md: No se realizan envíos en esta demo. La dirección configurada usa el dominio reservado example.com.

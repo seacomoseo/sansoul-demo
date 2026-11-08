@@ -1,33 +1,29 @@
 name: Nosotros
 boxes:
-- title: Nosotros
-  sub: Lorem ipsum dolor sit amet
+- title: Un proyecto para probar y adaptar
+  sub: Sin cliente ni negocio detrás
   icon: info
   box:
     cols: 2
     duo: 2
     align: left
   boxes:
-  - bi: /u/base/poster.png
-    scroll: soft
+  - img: /u/base/poster.png
+    alt: Ilustración local de muestra
+    ratio: 4/3
   - align_y: center
     md: |
-      Lorem ipsum dolor sit amet.
-      Consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt.
-      Ut labore et dolore magna aliqua.
+      Este repositorio sirve como punto de partida para proyectos nuevos y como entorno reproducible para desarrollar SanSoul.
 
-      Lorem ipsum dolor sit amet.
-      Consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt.
-      Ut labore et dolore magna aliqua.
+      Las fichas, reseñas, precios, direcciones y textos son datos ficticios. Conserva la estructura que te sirva y reemplaza el contenido antes de publicar un sitio propio.
 
-      Lorem ipsum dolor sit amet.
-      Consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt.
-      Ut labore et dolore magna aliqua.
-
-      Lorem ipsum dolor sit amet.
-      Consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt.
-      Ut labore et dolore magna aliqua.
+      [[Botón para abrir modal]](#modal)
+modal:
+  color: white
+modals:
+- id: modal
+  title: Ventana modal
+  sub: Contenido modal de muestra
+  icon: tune
+  md: |
+    Una ficha de ejemplo puede combinar texto, precio, etiquetas y una llamada a la acción.

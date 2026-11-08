@@ -1,0 +1,11 @@
+title: Categorías
+base: page
+weight: 5
+tax_of:
+- name: blog
+  multi: true
+  crumbs: true
+  schema: articleSection
+- name: product
+  multi: true
+  crumbs: true
