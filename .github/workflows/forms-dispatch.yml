@@ -26,3 +26,7 @@ jobs:
           echo "status=$status"
           cat /tmp/dispatch.json
           test "$status" = 200
+          # Submissions that need a person show as a warning on the run; the
+          # project panel (CMS → Formularios) lists them.
+          attention=$(sed -n 's/.*"attention":\([0-9]*\).*/\1/p' /tmp/dispatch.json)
+          if [ "${attention:-0}" -gt 0 ]; then echo "::warning::$attention form submission(s) need a decision in the forms panel"; fi

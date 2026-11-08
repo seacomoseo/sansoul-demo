@@ -17,6 +17,8 @@ not_found_handling = "404-page"
 # `hold` stores submissions without sending: the demo never mails anyone.
 FORMS_PROVIDER = "hold"
 FORMS_SENDER_NAME = "SanSoul demo"
+# TEST data only: closed submissions are deleted after 30 days.
+FORMS_RETENTION_DAYS = "30"
 
 [[d1_databases]]
 binding = "FORMS_DB"
