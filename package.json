@@ -1,6 +1,6 @@
 {
   "name": "sansoul-demo",
-  "version": "13.4.0",
+  "version": "13.5.0",
   "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -14,7 +14,7 @@
   "scripts": {
     "test": "sh do check",
     "build": "sh do build",
-    "server": "npx http-server public",
+    "server": "pnpm dlx http-server public",
     "dev": "sh do dev",
     "live": "sh do live"
   },
