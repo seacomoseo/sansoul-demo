@@ -33,7 +33,7 @@ boxes:
       label: Ronda de Levante, 1, 30008 Murcia
       anchor: Example, Ronda de Levante, 1, 30008 Murcia
     form:
-      action: about:blank
+      action: worker
       mail: sansoul@seacomoseo.com
     inputs:
     - type: text
@@ -51,6 +51,10 @@ boxes:
       name: Mensaje de prueba
       icon: chat_bubble
       req: true
+    - type: file
+      name: Adjunto de prueba
+      accept: image/*,application/pdf
+      max: 3
   - geos:
     - type: point
       geo: '{"type":"Point","coordinates":[-1.1306520,37.9922180]}'
