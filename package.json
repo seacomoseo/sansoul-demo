@@ -1,6 +1,6 @@
 {
   "name": "sansoul-demo",
-  "version": "13.7.0",
+  "version": "14.0.0",
   "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",

@@ -9,4 +9,6 @@ jsconfig.json
 .sansoul-dev.lock
 .pnpm-store
 .env.local
-worker/forms.generated.js
+/worker/
+.wrangler
+.dev.vars
