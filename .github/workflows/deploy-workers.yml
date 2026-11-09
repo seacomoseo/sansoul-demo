@@ -71,6 +71,8 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22.22.3
+          # No pnpm in this job: skip the automatic packageManager cache.
+          package-manager-cache: false
       - name: Apply D1 migrations (this project's own database only)
         run: npx --yes wrangler@4.147.0 d1 migrations apply FORMS_DB --remote --config wrangler.workers.toml
       - name: Deploy Worker with Static Assets
