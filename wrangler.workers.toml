@@ -1,7 +1,8 @@
 # Workers Free only: no Paid CPU limits, R2, remote migration sprees or custom
-# domains. The Pages config in wrangler.toml stays as the rollback path.
-# TEST resources of the SanSoul Cloudflare account.
+# domains. TEST resources of the SanSoul Cloudflare account; the account ID is
+# not a secret (the API token is, and lives only in GitHub secrets).
 name = "demo"
+account_id = "e78d5ea9600fe361d56d3567a9494536"
 main = "worker.js"
 compatibility_date = "2025-12-10"
 workers_dev = true
