@@ -1,0 +1,32 @@
+name: Forms delivery drain
+# Retries pending form deliveries (large Drive sends that outlive waitUntil,
+# transient failures). Free accounts have few cron triggers, so GitHub drives it.
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: ${{ vars.FORMS_URL != '' }}
+    steps:
+      - name: POST /api/forms/admin/dispatch
+        env:
+          FORMS_URL: ${{ vars.FORMS_URL }}
+          FORMS_ADMIN_TOKEN: ${{ secrets.FORMS_ADMIN_TOKEN }}
+        run: |
+          test -n "$FORMS_ADMIN_TOKEN" || { echo "Missing secret FORMS_ADMIN_TOKEN"; exit 1; }
+          status=$(curl -sS -o /tmp/dispatch.json -w '%{http_code}' -X POST \
+            -H "Authorization: Bearer $FORMS_ADMIN_TOKEN" \
+            "${FORMS_URL%/}/api/forms/admin/dispatch")
+          echo "status=$status"
+          cat /tmp/dispatch.json
+          test "$status" = 200
+          # Submissions that need a person show as a warning on the run; the
+          # project panel (CMS → Formularios) lists them.
+          attention=$(sed -n 's/.*"attention":\([0-9]*\).*/\1/p' /tmp/dispatch.json)
+          if [ "${attention:-0}" -gt 0 ]; then echo "::warning::$attention form submission(s) need a decision in the forms panel"; fi
