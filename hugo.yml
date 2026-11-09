@@ -1,11 +1,12 @@
 baseURL: https://demo.sansoul.workers.dev
 buildFuture: true
 params:
-  domain: demo.sansoul.workers.dev
   owner: seacomoseo
-  name: sansoul
-  netlify_id: c68e19de-b566-40c3-96ac-0e5884121e3f
-  netlify_hook: NjMwMmJjOWExZjZiNGI2Zjk2YmJjMDVh
-  cloudflare_id: ''
   drive_url: https://drive.google.com/file/d/1trq28fMfEVwoZOk4ue0tJzAJDZtj64BK
   drive_mails: sansoul@seacomoseo.com
+  repo: sansoul-demo
+  worker: demo
+  worker_vars:
+    FORMS_PROVIDER: hold
+    FORMS_SENDER_NAME: SanSoul demo
+    FORMS_RETENTION_DAYS: "30"
