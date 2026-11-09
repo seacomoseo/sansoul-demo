@@ -10,16 +10,8 @@ instala Dart Sass una vez en el `PATH` (`brew install sass/sass/sass` en macOS).
 Node.js se requiere para los servidores administrados y los builds completos.
 Todos los proyectos usan pnpm: activa la versión exacta de `packageManager` e instala
 con `pnpm install --frozen-lockfile`. `sh do build` instala las dependencias
-ausentes con el gestor del proyecto. Node se fija en `.node-version`; Hugo y
-Wrangler, en el motor.
-
-## Publicación
-
-Cada push a `main` ejecuta el workflow `SanSoul` (`.github/workflows/sansoul.yml`,
-generado por el motor): copia en GitLab, build y despliegue en Cloudflare Workers.
-El nombre del Worker y sus variables están en `hugo.yml` (`params.worker`,
-`params.worker_vars`); el resto lo genera el motor. Secretos del repositorio:
-`CLOUDFLARE_API_TOKEN` (token de la cuenta Cloudflare del proyecto) y `GL_PAT`.
+ausentes con el gestor del proyecto. Las versiones de despliegue se declaran
+en `.node-version`, `netlify.toml` y `wrangler.toml`.
 
 ```sh
 git submodule update --init --recursive
@@ -58,7 +50,6 @@ modificados; `dev` y `cms` los detectan durante la sesión sin reiniciar Hugo.
 - [Metadatos Markdown](core/docs/markdown-metadata.md)
 - [Vídeos y caché](core/docs/video-metadata.md)
 - [Vista previa experimental del CMS](core/docs/cms-live-preview.md)
-- [Comercio opt-in y carrito](core/README-ROOT.md#comercio-opt-in)
 - [Instrucciones para agentes](AGENTS.md)
 
 Con Codex, «Actualiza el submódulo» activa el flujo completo de actualización, migraciones, validación y sincronización de versiones. No autoriza commit, push ni despliegue.
