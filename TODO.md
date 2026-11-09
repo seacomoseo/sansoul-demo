@@ -13,12 +13,13 @@ Below I describe the typical steps to follow once the repository has been copied
   - `git submodule add https://github.com/seacomoseo/sansoul.git core`
 - Else if fork:
   - Download submódule theme files: `git submodule update --init --recursive`
-- Now you can see the run project in the browser with the `do server` comand
-- `README.md` ⏩ edit baseURL ("var_domain") + delete steps bit by bit
+- `hugo.yml` ⏩ `baseURL` ("var_domain") + `params.owner`, `repo`, `worker` (+ `netlify` only for a Netlify mirror) ⏩ `sh do root-docs`
+- Run it: `sh do dev` (fast) or `sh do local` (production build + local Worker for forms/commerce)
+- GitHub secrets: `CLOUDFLARE_API_TOKEN` (account token), `GL_PAT` (GitLab backup), `NETLIFY_AUTH_TOKEN` (only with a Netlify mirror)
 - Design
   - You can edit any file with the same structure of theme sansoul
   - GENERAL
-    - `config.yml`
+    - `hugo.yml`
     - `data/*.{yml,md}`
   - IMG + LOGO + FAVICON
     - `uploads/` folder ⏩ [Compress image tool](https://compressor.io/)
@@ -27,7 +28,6 @@ Below I describe the typical steps to follow once the repository has been copied
       - `logo.png`
       - `icon.png`
       - `favicon.ico` ⏩ [Favicon converter tool](https://favicon.io/favicon-converter/)
-    - Netlify and Cloudflare Pages update icon (project and account)
   - FONTS
     - Fonts that not be in Google Fonts:
       - .otf/.ttf files in `assets/fonts` + rename
@@ -61,7 +61,6 @@ Below I describe the typical steps to follow once the repository has been copied
   - LLMS: `assets/llms.txt`
   - MEDIA: `media/*`
   - REDIRECTS: `data/redirects.yml`
-  - If Multilanguaje and Multihosting, add `cp ./public/[es|en]/404.html ./public/` in `netlify.toml ⏩ build.command`
   - Try in Safari and Firefox
   - Check in [W3 Validator](https://validator.w3.org/)
   - Check in [PageSpeed Insights](https://pagespeed.web.dev/)
@@ -72,7 +71,10 @@ Below I describe the typical steps to follow once the repository has been copied
 
 #### Domain
 
-- If Netlify
+- Cloudflare Workers (default)
+  - The domain zone must be in Cloudflare
+  - Cloudflare ⏩ `Workers & Pages ⏩ var_name ⏩ Settings ⏩ Domains & Routes ⏩ Add ⏩ Custom domain` ⏩ `var_domain` and `www.var_domain`
+- If Netlify mirror (`params.netlify`; the CI creates the site)
   - [`Domain Management / settings`](https://app.netlify.com/sites/var_name/settings/domain)
   - `Add custom domain`
   - `Check DNS configuration` Copy
@@ -89,34 +91,14 @@ Below I describe the typical steps to follow once the repository has been copied
     - Maybe you need to eliminate the previous records with similar names
   - `Verify DNS configuration`
   - If it does not work after a while, try `Set as main domain` in the `www` version and also in te `nowww` version
-- If Cloudflare Pages
-  - [Custom domains](https://dash.cloudflare.com/?to=/:account/pages/view/var_name/domains)
-  - `Set up a custom domains`
-  - `var_domain`
-  - `Continue`
-  - Add `DNS Records` copied from Cloudflare Pages to Domain gestor:
-    - From: `var_domain`
-      DNS Record: `CNAME`
-      To: `var_name.pages.dev`
-    - From: `www`
-      DNS Record: `CNAME`
-      To: `var_name.pages.dev`
-  - `Activate domain` (if `Begin DNS transfer` end)
-  - Repeat with `www.var_domain`
-  - ...........................................................
 
 
 #### Forms
 
 - If SanSoulSend Form
   - Add domain and emails in [GSS](https://docs.google.com/spreadsheets/d/1yQEoxReqnvQbQ5LkGnhUvu2_Aa-PhGfFztoRG1qY6iM/edit?gid=0#gid=0)
-- If Netlify Form
-  - Don't need configure nothing! Build like you want in local or with CMS
-  - [`Netlify ⏩ Site ⏩ Forms ⏩ Form Notifications`](https://app.netlify.com/sites/var_name/settings/forms#form-notifications) ⏩ `Add notification ⏩ Email notification ⏩ Email to Notify`
-    - `Email to notify` = Emails of collaborators that want receive submissions
-    - `Custom email subject line` = `Formulario de contacto de var_domain`
-    - `Save`
-  - Submissions: [`Netlify site ⏩ Forms`](https://app.netlify.com/sites/var_name/forms)
+- If Worker Form (`action: worker`)
+  - `params.worker_vars` + Worker secrets (`FORMS_ADMIN_TOKEN`, Gmail…): see `core/README-ROOT.md`
 - [formsubmit.co](https://formsubmit.co/)
 - If Google Form: [Tutorial](https://seacomoseo.com/instrucciones/#google-forms)
 
