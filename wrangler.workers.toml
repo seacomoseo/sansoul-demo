@@ -20,6 +20,8 @@ FORMS_SENDER_NAME = "SanSoul demo"
 # TEST data only: closed submissions are deleted after 30 days.
 FORMS_RETENTION_DAYS = "30"
 
+# One D1 and one KV per project: never shared with another site (the tables
+# carry no site column; the panel warns when it finds another site's data).
 [[d1_databases]]
 binding = "FORMS_DB"
 database_name = "sansoul-demo-forms"
