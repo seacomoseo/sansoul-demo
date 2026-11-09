@@ -4,7 +4,7 @@
 
 Este repositorio es la referencia copiable para crear sitios que usan SanSoul y el entorno de demo para desarrollar y probar el tema. No representa a un cliente ni a un negocio. El contenido de ejemplo se puede reemplazar al iniciar un proyecto nuevo.
 
-El sitio público de referencia está en <https://sansoul.pages.dev/>. Los valores `var_*`, como `var_domain`, son marcadores deliberados que deben sustituirse en un proyecto real.
+El sitio público de referencia está en <https://demo.sansoul.workers.dev/>. Los valores `var_*`, como `var_domain`, son marcadores deliberados que deben sustituirse en un proyecto real.
 
 ## Particularidades
 
