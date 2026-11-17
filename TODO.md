@@ -15,6 +15,7 @@ Below I describe the typical steps to follow once the repository has been copied
   - Download submódule theme files: `git submodule update --init --recursive`
 - `hugo.yml` ⏩ `baseURL` ("var_domain") + `params.owner`, `repo`, `worker` (+ `netlify` only for a Netlify mirror) ⏩ `sh do root-docs`
 - Run it: `sh do dev` (fast) or `sh do local` (production build + local Worker for forms/commerce)
+- Save and publish: `sh do up ["message"]`; bring others' changes: `sh do down` (on a conflict both leave a ready prompt for an agent)
 - GitHub secrets: `CLOUDFLARE_API_TOKEN` (account token), `GL_PAT` (GitLab backup), `NETLIFY_AUTH_TOKEN` (only with a Netlify mirror)
 - Design
   - You can edit any file with the same structure of theme sansoul
@@ -26,14 +27,10 @@ Below I describe the typical steps to follow once the repository has been copied
       - `base/poster.png`
       - `logo.svg`
       - `logo.png`
-      - `icon.png`
-      - `favicon.ico` ⏩ [Favicon converter tool](https://favicon.io/favicon-converter/)
+      - `base/icon.svg` (or `base/icon.png`) ⏩ the build generates the favicons (`base/favicon.ico` only to override)
   - FONTS
-    - Fonts that not be in Google Fonts:
-      - .otf/.ttf files in `assets/fonts` + rename
-      - You need the `sansoul_tools` project in `../_tools` folder
-      - Run `do fonts` comand
-      - `Family` + `Style` + `Weight` must match in `styles.yml ⏩ fonts` + `_fonts.scss` (and disable `fonts.google` if appropriate)
+    - Google Fonts: just the family and weights in `data/styles.yml ⏩ fonts` (the build downloads them)
+    - Other fonts: `.otf/.ttf` files in `assets/fonts` ⏩ `sh do fonts` ⏩ use the printed family and weights in `data/styles.yml ⏩ fonts`
   - CONTENT
     - `content/*`
       - `page/divisores.md` ⏩ remove
@@ -75,22 +72,7 @@ Below I describe the typical steps to follow once the repository has been copied
   - The domain zone must be in Cloudflare
   - Cloudflare ⏩ `Workers & Pages ⏩ var_name ⏩ Settings ⏩ Domains & Routes ⏩ Add ⏩ Custom domain` ⏩ `var_domain` and `www.var_domain`
 - If Netlify mirror (`params.netlify`; the CI creates the site)
-  - [`Domain Management / settings`](https://app.netlify.com/sites/var_name/settings/domain)
-  - `Add custom domain`
-  - `Check DNS configuration` Copy
-  - Add `DNS Records` copied from Netlify to Domain gestor:
-    - From: `var_domain`
-      DNS Record: `ALIAS`, `ANAME` or `flattened CNAME`
-      To: `apex-loadbalancer.netlify.com`
-    - From: `var_domain`
-      DNS Record: `A`
-      To: `75.2.60.5`
-    - From: `www`
-      DNS Record: `CNAME`
-      To: `var_name.netlify.app.`
-    - Maybe you need to eliminate the previous records with similar names
-  - `Verify DNS configuration`
-  - If it does not work after a while, try `Set as main domain` in the `www` version and also in te `nowww` version
+  - [`Domain Management`](https://app.netlify.com/sites/var_name/settings/domain) ⏩ `Add custom domain` ⏩ copy the records from `Check DNS configuration` to the DNS ⏩ `Verify DNS configuration`
 
 
 #### Forms
