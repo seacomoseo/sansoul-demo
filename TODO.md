@@ -1,6 +1,6 @@
 # TO DO
 
-Below I describe the typical steps to follow once the repository has been copied. These are the manual steps, although I usually use scripts that do almost everything via APIs.
+`sh <engine>/do new <domain> --owner <org> --mails <client mails>` creates the private repo from this demo, the Cloudflare CI token, the GitLab backup, GA4, Search Console and the Drive files (plan first; `--apply` runs it). Below are only the steps it cannot do.
 
 
 ## STEPS
@@ -8,15 +8,9 @@ Below I describe the typical steps to follow once the repository has been copied
 
 ### Local
 
-- If new project (not fork):
-  - Copy [var_domain project files](https://github.com/var_owner/var_domain)
-  - `git submodule add https://github.com/seacomoseo/sansoul.git core`
-- Else if fork:
-  - Download submódule theme files: `git submodule update --init --recursive`
-- `hugo.yml` ⏩ `baseURL` ("var_domain") + `params.owner`, `repo`, `worker` (+ `netlify` only for a Netlify mirror) ⏩ `sh do root-docs`
+- Existing clone: `git submodule update --init --recursive`
 - Run it: `sh do dev` (fast) or `sh do local` (production build + local Worker for forms/commerce)
 - Save and publish: `sh do up ["message"]`; bring others' changes: `sh do down` (on a conflict both leave a ready prompt for an agent)
-- GitHub secrets: `CLOUDFLARE_API_TOKEN` (account token), `GL_PAT` (GitLab backup), `NETLIFY_AUTH_TOKEN` (only with a Netlify mirror)
 - Design
   - You can edit any file with the same structure of theme sansoul
   - GENERAL
@@ -33,7 +27,6 @@ Below I describe the typical steps to follow once the repository has been copied
     - Other fonts: `.otf/.ttf` files in `assets/fonts` ⏩ `sh do fonts` ⏩ use the printed family and weights in `data/styles.yml ⏩ fonts`
   - CONTENT
     - `content/*`
-      - `page/divisores.md` ⏩ remove
       - SCRAP
         - Copy [this Spreadsheet Layout](https://docs.google.com/spreadsheets/d/1bJQaAFoBAwHhWz_WFRIHlkHoDmZZyT8H8NtdCnSTdaU)
         - First scrap with Screaming Frog and paste `url` and `title`
@@ -66,9 +59,7 @@ Below I describe the typical steps to follow once the repository has been copied
 
 #### Domain
 
-- Cloudflare Workers (default)
-  - The domain zone must be in Cloudflare
-  - Cloudflare ⏩ `Workers & Pages ⏩ var_name ⏩ Settings ⏩ Domains & Routes ⏩ Add ⏩ Custom domain` ⏩ `var_domain` and `www.var_domain`
+- Cloudflare Workers (default): `sh do new --only cloudflare,gsc --production --apply` (zone, Worker custom domains, Search Console verification); then point the registrar to the printed nameservers and repeat
 - If Netlify mirror (`params.netlify`; the CI creates the site)
   - [`Domain Management`](https://app.netlify.com/sites/var_name/settings/domain) ⏩ `Add custom domain` ⏩ copy the records from `Check DNS configuration` to the DNS ⏩ `Verify DNS configuration`
 
@@ -83,32 +74,10 @@ Below I describe the typical steps to follow once the repository has been copied
 - If Google Form: [Tutorial](https://seacomoseo.com/instrucciones/#google-forms)
 
 
-#### [Google Analytics](https://analytics.google.com/)
+#### Google Analytics
 
-- `Admin ⏩ Libre acount ⏩ New property ⏩ ...` copy ID
-- `data/config.yml ⏩ ga4` ⏩ paste ID
-- `Ajustes de datos`
-  - `Recogida de datos`
-    - `Recogida de datos de Google signals ⏩ Empezar`
-    - `Consentimiento de recogida de datos de usuario` ⏩ Check
-  - `Conservación de datos ⏩ Conservación de datos de eventos ⏩ 14 meses ⏩ Guardar`
-- `Eventos clave ⏩ Nuevo eventos clave ⏩ Nombre de evento nuevo` ⏩ add `contact`
-- `Definiciones personalizadas ⏩ Crear dimensión personalizada ⏩ Nombre de la dimensión + Parámetro de evento` ⏩ add `ID + id` + `Label + label` + `Type + type`
-
-
-#### [Google Search Console](https://search.google.com/search-console)
-
-- Add property
-- Verify versions ⏩ `data/config.yml`
-  - `ga4`
-  - `g_site_verify`
-  - `g_file_verify`
-  - DNS:
-    From: `@`
-    DNS Record: `TXT`
-    To: `google-site-verification=[g_site_verify]`
-- Link with Analytics
-- Add sitemap.xml
+- Google Signals: open the link printed by `sh do new` ⏩ `Recogida de datos de Google signals ⏩ Empezar`
+- Once Search Console is verified: `Admin ⏩ Vinculaciones de productos ⏩ Search Console ⏩ Vincular`
 
 
 #### [Google My Business](https://business.google.com/)
@@ -123,17 +92,8 @@ Below I describe the typical steps to follow once the repository has been copied
 
 #### Collaborators
 
-- [Google Analytics](https://analytics.google.com/) ⏩ `Admin ⏩ Libre acount ⏩ Site ⏩ Property access management ⏩ Add users` ⏩ Add emails of collaborators with role `Reader` or `Admin`.
-- [Google Search Console](https://search.google.com/search-console) ⏩ `Site ⏩ Settings ⏩ Users and permissions ⏩ Add user` Add emails of collaborators with `Full` permission
 - [Google My Business](https://business.google.com/)
   - `Site ⏩ Users ⏩ Add users` ⏩ Add emails of collaborators with role `Owner`
-
-
-##### Services Layout
-
-1. [Servicios var_domain](https://drive.google.com/file/d/1trq28fMfEVwoZOk4ue0tJzAJDZtj64BK) ⏩ `File ⏩ Make a copy` ⏩ Select client directory.
-1. Change the info.
-1. `Share` ⏩ Add emails of collaborators with `Editor` permission.
 
 
 ##### Delivery
