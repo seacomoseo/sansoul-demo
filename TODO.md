@@ -42,15 +42,13 @@ Below I describe the typical steps to follow once the repository has been copied
           - Three scrap with `Web Scraper` chrome extension and paste in `content-scrap` tab
           - Copy `content-start` tab into `content-next` and get `body_code` (by `content-scrap`) with `VLOOKUP` formula
           - Copy `body_code` column to `body`, replace double quotes, [convert to Markdown](https://smalldev.tools/html-to-markdown-converter-online) and clean it
-          - Paste in `file.md` in `./Downloads` and run `_tools/md-replaces.command`
-          - Check `file_new.md` content:
+          - Check the Markdown content:
             - headers: `^#`
             - images: `!\[.+?\)`
             - links: `(^|[^!])\[.+?\)`
             - internal links: `https?://(www\.)?example\.com`
           - Paste in sheet
-        - Export to CSV like `./Downloads/file.csv` and run `_tools/csv-to-md.command`
-        - Move files from `markdown_files` to `blog` project
+        - Export to CSV, convert each row to a Markdown file and move them to `content/`
   - HTML: `data/config.yml ⏩ langs[*].html.{head,body}`
   - CSS: `assets/_custom.scss` ⏩ `{*,_variables-custom.scss,_custom.scss}`
   - JS: `assets/custom.js`
