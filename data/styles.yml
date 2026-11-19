@@ -59,6 +59,12 @@ colors:
     gray: '#767676'
     dark: '#282525'
     black: '#000000'
+shadow:
+  left: 0.15
+  top: 0.15
+  blur: 0
+  color: black
+  alpha: 0.85
 rounded:
   radius: 0.33
   chamfer: true
@@ -75,12 +81,9 @@ btns:
     type: base
     bold: false
     caps: false
-inputs:
+form:
   fill: true
   labels: both
-shadow:
-  left: 0.15
-  top: 0.15
-  blur: 0
-  color: black
-  alpha: 0.85
+  # Legacy shared Apps Script (pinned by SanSoul 14.18.0). Remove it to use the
+  # project Worker (D1 + CMS panel) once its mail is set up: see core/forms/README.md.
+  action: https://script.google.com/macros/s/AKfycbzEd6cjH5eTjzVxDVk6x-3Q9QwUHDMWpR8V1Ij1g6IG7MYwpPM_epAGpxJUR1__ljrWMQ/exec
