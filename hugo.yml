@@ -7,6 +7,5 @@ params:
   repo: sansoul-demo
   worker: demo
   worker_vars:
-    FORMS_PROVIDER: hold
     FORMS_SENDER_NAME: SanSoul demo
     FORMS_RETENTION_DAYS: "30"
