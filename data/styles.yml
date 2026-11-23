@@ -84,6 +84,3 @@ btns:
 form:
   fill: true
   labels: both
-  # Legacy shared Apps Script (pinned by SanSoul 14.18.0). Remove it to use the
-  # project Worker (D1 + CMS panel) once its mail is set up: see core/forms/README.md.
-  action: https://script.google.com/macros/s/AKfycbzEd6cjH5eTjzVxDVk6x-3Q9QwUHDMWpR8V1Ij1g6IG7MYwpPM_epAGpxJUR1__ljrWMQ/exec

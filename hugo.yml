@@ -7,5 +7,7 @@ params:
   repo: sansoul-demo
   worker: demo
   worker_vars:
+    FORMS_PROVIDER: gmail
+    FORMS_GMAIL_DEFAULT: sansoulsend
     FORMS_SENDER_NAME: SanSoul demo
     FORMS_RETENTION_DAYS: "30"
